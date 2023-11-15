@@ -23,30 +23,27 @@ Add, commit, and push to your assignments repo. Submit a direct link to the assi
 */
 
 const reverseVowelsAndReplaceL = (string) => {
-    const vowels = 'aeiouAEIOU';
-    const reversedString = string.split('').reverse().join('');
-    const replacedL = reversedString.replace(/L/g, '1');
-
-    console.log(replacedL);
+    const replacedString = string.replace(/[Ll]/g, '1');
+    const reversedString = replacedString.split('').reverse().join('');
+    
+    reverseVowelsAndReplaceO(reversedString);
 }
 
-const reverseVowelsAndReplaceO = (string) => {
-    const vowels = 'aeiouAEIOU';
-    const reversedString = string.split('').reverse().join('');
-    const replacedO = reversedString.replace(/O/g, '0');
+const reverseVowelsAndReplaceO = (reversedString) => {
+    const replacedString = reversedString.replace(/[Oo]/g, '0');
+    const reversedStringAgain = replacedString.split('').reverse().join('');
 
-    console.log(replacedO);
+    reverseVowelsAndReplaceS(reversedStringAgain);
 }
 
-const reverseVowelsAndReplaceS = (string) => {
-    const vowels = 'aeiouAEIOU';
-    const reversedString = string.split('').reverse().join('');
-    const replacedS = reversedString.replace(/S/g, '5');
+const reverseVowelsAndReplaceS = (reversedStringAgain) => {
+    const lastString = reversedStringAgain.replace(/[Ss]/g, '5');
+    const reversedLastString = lastString.split('').reverse().join('');
+    
+    console.log(reversedLastString);
 
-    console.log(replacedS);
+    return reversedLastString;
 }
 
-const inputString = "Sally Loves All Kinds of Olives";
-reverseVowelsAndReplaceL(inputString);
-reverseVowelsAndReplaceO(inputString);
-reverseVowelsAndReplaceS(inputString);
+const string = "Sally Cinnamon, You're My World!";
+const reversedLastString = reverseVowelsAndReplaceL(string);
